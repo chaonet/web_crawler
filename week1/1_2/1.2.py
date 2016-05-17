@@ -3,38 +3,27 @@
 
 from bs4 import BeautifulSoup
 
+# 获取网页并解析
 soup = BeautifulSoup(open("index.html"), "lxml")
 # print soup
 
+# 图片列表
 imgs = soup.select(".thumbnail > img")
 # print imgs
 
-for img in imgs:
-	# print img.get('src')
-	pass
-
+# 价格列表
 price_list = soup.select("div.caption > h4.pull-right")
 # print price_list
 
-for price in price_list:
-	# print price.get_text()
-	pass
-
+# 标题列表
 titles = soup.select("div.caption > h4 > a")
 # print titles
 
-for title in titles:
-	# print title.get_text()
-	pass
-
+# 评分数量列表
 star_nums = soup.select("div.ratings > p.pull-right")
 # print star_nums
 
-for star_num in star_nums:
-	# print star_num.get_text()
-	pass
-
-# stars = soup.select("div.ratings > p > span")
+# 星级列表
 parents = soup.select("div.ratings")
 # print parents
 star_level_list = []
@@ -45,6 +34,7 @@ for parent in parents:
 	# print len(star_level)
 	star_level_list.append(len(star_level))
 
+# 将每个商品的信息组成字典，放入列表，打印
 goods = []
 
 for i in range(len(titles)):
