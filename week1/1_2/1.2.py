@@ -37,13 +37,15 @@ for parent in parents:
 # 将每个商品的信息组成字典，放入列表，打印
 goods = []
 
-for i in range(len(titles)):
-	goods_info = {}
-	goods_info["title"] = titles[i].get_text()
-	goods_info["img"] = imgs[i].get('src')
-	goods_info["price"] = price_list[i].get_text()
-	goods_info["star_num"] = star_nums[i].get_text()
-	goods_info["star_level"] = star_level_list[i]
+for title, img, price, star_num, star_level in zip(
+		titles, imgs, price_list, star_nums, star_level_list):
+	goods_info = {
+		"title":title.get_text(),
+		"img":img.get('src'),
+		"price":price.get_text(),
+		"star_num":star_num.get_text(),
+		"star_level":star_level
+	}
 
 	goods.append(goods_info)
 
