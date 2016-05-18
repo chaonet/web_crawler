@@ -29,24 +29,24 @@ parents = soup.select("div.ratings")
 star_level_list = []
 
 for parent in parents:
-	star_level = parent.find_all("span", "glyphicon glyphicon-star")
-	# print star_level
-	# print len(star_level)
-	star_level_list.append(len(star_level))
+    star_level = parent.find_all("span", "glyphicon glyphicon-star")
+    # print star_level
+    # print len(star_level)
+    star_level_list.append(len(star_level))
 
 # 将每个商品的信息组成字典，放入列表，打印
 goods = []
 
 for title, img, price, star_num, star_level in zip(
-		titles, imgs, price_list, star_nums, star_level_list):
-	goods_info = {
-		"title":title.get_text(),
-		"img":img.get('src'),
-		"price":price.get_text(),
-		"star_num":star_num.get_text(),
-		"star_level":star_level
-	}
+        titles, imgs, price_list, star_nums, star_level_list):
+    goods_info = {
+        "title":title.get_text(),
+        "img":img.get('src'),
+        "price":price.get_text(),
+        "star_num":star_num.get_text(),
+        "star_level":star_level
+    }
 
-	goods.append(goods_info)
+    goods.append(goods_info)
 
 print goods
