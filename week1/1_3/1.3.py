@@ -55,7 +55,7 @@ def detail_info(detail_urls):
             'img_url':img[0]['data-bigimg'],
             'fangdong_img_url':fangdong_img[0].get('src'),
             'name':name[0].get_text(),
-            'gender':name[0].get_text()
+            'gender':gender_unicode
         }
 
         # detail_list.append(detail_dict)
