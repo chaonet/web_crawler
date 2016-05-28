@@ -9,7 +9,7 @@ headers = {
 }
 
 proxies = {
-    "http": "http://91.211.157.35:80/",
+    "http": "http://107.151.136.195:80/",
 }
 
 urls = ["http://weheartit.com/inspirations/taylorswift?page={}".format(i) for i in range(1, 21)]
