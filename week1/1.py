@@ -15,17 +15,19 @@ def get_views(detail_url):
     views_url = "http://jst1.58.com/counter?infoid={}".format(infoid)
     # print views_url
 
-    headers = {
-        "Host":"jst1.58.com",
-        "Connection":"keep-alive",
-        "Cache-Control":"max-age=0",
-        "Accept":"*/*",
-        "User-Agent": r"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.102 Safari/537.36",
-        "Referer": detail_url,
-        "Accept-Encoding":"gzip, deflate, sdch",
-        "Accept-Language":"zh-CN,zh;q=0.8,en;q=0.6",
-        "Cookie":r'id58=c5/njVc+c4tUnwgiDMtjAg==; bj58_id58s="UU16Wm1FaFgrUnpMNDA4Mg=="; sessionid=d030f6af-5efe-4c6c-84c7-c9e4649a2da0; als=0; myfeet_tooltip=end; 58home=suqian; bangbigtip2=1; ipcity=suqian%7C%u5BBF%u8FC1; 58tj_uuid=3e53804a-394e-47a3-8047-893ea4c56f92; new_session=0; new_uv=7; utm_source=; spm=; init_refer=http%253A%252F%252Fbj.58.com%252Fpbdn%252F0%252F; final_history=26054432868687%2C26080615630506%2C26045484799931; bj58_new_session=0; bj58_init_refer="http://bj.58.com/pbdn/0/"; bj58_new_uv=7',
-    }
+    # headers = {
+    #     "Host":"jst1.58.com",
+    #     "Connection":"keep-alive",
+    #     "Cache-Control":"max-age=0",
+    #     "Accept":"*/*",
+    #     "User-Agent": r"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.102 Safari/537.36",
+    #     "Referer": detail_url,
+    #     "Accept-Encoding":"gzip, deflate, sdch",
+    #     "Accept-Language":"zh-CN,zh;q=0.8,en;q=0.6",
+    #     "Cookie":r'id58=c5/njVc+c4tUnwgiDMtjAg==; bj58_id58s="UU16Wm1FaFgrUnpMNDA4Mg=="; sessionid=d030f6af-5efe-4c6c-84c7-c9e4649a2da0; als=0; myfeet_tooltip=end; 58home=suqian; bangbigtip2=1; ipcity=suqian%7C%u5BBF%u8FC1; 58tj_uuid=3e53804a-394e-47a3-8047-893ea4c56f92; new_session=0; new_uv=7; utm_source=; spm=; init_refer=http%253A%252F%252Fbj.58.com%252Fpbdn%252F0%252F; final_history=26054432868687%2C26080615630506%2C26045484799931; bj58_new_session=0; bj58_init_refer="http://bj.58.com/pbdn/0/"; bj58_new_uv=7',
+    # }
+
+    headers = {"Referer": detail_url} # 可返回当前文档的 URL。
 
     views = requests.get(views_url, headers=headers).text.split("=")[2]
 
