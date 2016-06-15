@@ -14,6 +14,12 @@ def home(request):
     item_info = ItemInfo.objects
     paginatior = Paginator(item_info,limit)
     page = request.GET.get('page',1)
+    # print type(page)
+    if int(page) < 1:
+        page = 1
+    elif int(page) > paginatior.num_pages:
+        page = paginatior.num_pages
+
     print(request)
     print(request.GET)
     loaded = paginatior.page(page)
