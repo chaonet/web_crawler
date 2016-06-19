@@ -1,0 +1,64 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>DataLab</title>
+
+
+    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
+
+
+    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/grids-responsive-min.css">
+
+    {# 上面两个 css 是调整自适应的部分，直接从官网的 CDN 引用就行；下面的才是网站所需的样式；最后删除了适应 ie 浏览器的部分，不需要适应，直接放弃 ;) #}
+
+    <link rel="stylesheet" href="{% static 'css/semantic.css' %}">
+    <script src="{% static 'js/jquery-3.0.0.min.js' %}"></script>
+    <script src="{% static 'js/semantic.min.js' %}"></script>
+
+</head>
+<body>
+    <div class="ui thin visible sidebar inverted vertical menu">
+      <a class="item">
+        <img src="{% static 'images/logo2.png' %}" width="50" height="50">
+      </a>
+      <a class="item">
+        Document
+        <i class="browser icon"></i>
+      </a>
+      <a class="item">
+        Charts
+        <i class="bar chart icon"></i>
+      </a>
+      <a class="item">
+        Others
+        <i class="idea icon"></i>
+      </a>
+  </div>
+  <div class="pusher">
+    <div class="ui grid">
+      <div class="sixteen wide column">
+        <div class="ui menu">
+          <a class="item">Menu<i class="sidebar icon"></i></a>
+          <a class="item">About Us </a>
+          <a class="item">Location </a>
+          <a class="item">Others </a>
+        </div>
+      </div>
+    </div>
+    <div class="ui grid">
+      <div class="sixteen wide column">
+      </div>
+    </div>
+  </div>
+
+<!-- card views -->
+
+<script type="text/javascript">
+$('.ui.sidebar')
+  .sidebar('is visible')
+;
+</script>
+</body>
+</html>
