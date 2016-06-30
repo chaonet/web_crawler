@@ -121,3 +121,6 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = (os.path.join(BASE_DIR, "static"),)
+
+from mongoengine import connect
+connect('ganji', host='127.0.0.1', port=27017)
